@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .form-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #form-column-left {
+        background-color: blue;
+      }
+
+      #form-column-right {
+        background-color: gray;
+      }
+
+      .form-column {
+        flex-basis: 50;
+        height: 100vh;
+      }
+    </style>
+    <script>
+      function handleSubmit() {
+        // validating terms and conditions
+        var tnc = document.getElementById("tnc");
+        if (!tnc.checked) {
+          // show error
+          alert(
+            "You cannot register without agreeing to the terms and conditions."
+          );
+          // abort submission
+          return false; // Add this line to prevent form submission
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form>
+      <div class="form-container">
+        <!-- Left section -->
+        <div id="form-column-left" class="form-column">
+          <label for="Title">Title</label>
+          <input type="text" required /><select></select>
+          <div>
+            <label for="firstname">First Name</label>
+            <input type="text" required />
+            <label for="Country">Last Name</label>
+            <input type="text" required />
+          </div>
+
+          <div>
+            <label for="">Position</label>
+            <input type="text" required />
+          </div>
+
+          <div>
+            <label for="">Company</label>
+            <input type="text" required />
+          </div>
+        </div>
+        <!-- Right section -->
+        <div class="form-column-right form-column">
+          <div>
+            <label for="street">Street+Nr</label>
+            <input type="text" required />
+          </div>
+          <div>
+            <label for="info">Additional information</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="info">Additional information</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="info">Additional information</label>
+            <input type="text" />
+            <div>
+              <div>
+                <label for="zip">Zip code</label>
+                <input type="number" required />
+              </div>
+              <div>
+                <label>Provinces</label>
+                <select required>
+                  <option>Western</option>
+                  <option>Uva</option>
+                  <option>Nothern</option>
+                  <option>North Western</option>
+                  <option>Sabaragamuwa</option>
+                  <option>Central</option>
+                  <option>Eastern</option>
+                  <option>North Central</option>
+                  <option>Southern</option>
+                </select>
+              </div>
+              <div>
+                <label for="country">Country</label>
+                <input type="text" /><select></select>
+              </div>
+              <div>
+                <label for="code">Code+</label>
+                <input type="number" />
+                <label for="phone">Phone number</label>
+                <input type="number" />
+              </div>
+              <div>
+                <label>Email</label>
+                <input type="email" required />
+              </div>
+              <div>
+                <input type="checkbox" id="tnc" />
+                <label
+                  >I do accept the Terms and conditions of your site.
+                </label>
+              </div>
+              <div>
+                <button>Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
